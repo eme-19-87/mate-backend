@@ -1,0 +1,253 @@
+/*Estilos para la tarjeta de presentación de los miembros del grupo que se encuentra en
+quienes somos*/
+
+* {
+    box-sizing: border-box;
+  }
+  
+  #us-information {
+    background:transparent;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+  
+    
+  }
+
+
+  main{
+    margin-top:100px;
+  }
+  
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    box-shadow: 0 3px 7px -1px var(--first-dark);
+    margin-top:50px;
+    background-color:var(--first-dark)!important;
+    line-height: 1.4;
+    font-family: sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+    width:95%;
+    color:var(--first-grey);
+    text-align: center;
+    z-index: 0;
+    a {
+      color: inherit;
+      &:hover {
+        color: white;
+      }
+    }
+    &:hover {
+      .photo {
+        transform: scale(1.3) rotate(3deg);
+      }
+    }
+    .meta {
+      position: relative;
+      z-index: 0;
+      height: 200px;
+    }
+    .photo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform .2s;
+    }
+    .details,
+    .details ul {
+      margin: auto;
+      padding: 0;
+      list-style: none;
+    }
+  
+   
+    .description {
+
+      position: relative;
+      z-index: 1;
+      h1,
+      h2 {
+        font-family: Poppins, sans-serif;
+      }
+      h1 {
+        line-height: 1;
+        margin: 0;
+        font-size: 1.7rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+
+        margin-top: 5px;
+      }
+      .read-more {
+        text-align: right;
+        a {
+       
+          display: inline-block;
+          position: relative;
+          &:after {
+            content: "\f061";
+            font-family: FontAwesome;
+            margin-left: -10px;
+            opacity: 0;
+            vertical-align: middle;
+            transition: margin .3s, opacity .3s;
+          }
+  
+          &:hover:after {
+            margin-left: 5px;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    p {
+      position: relative;
+      margin: 1rem 0 0;
+      font-size: 1.2rem;
+     
+    }
+    &:hover {
+      .details {
+        left: 0%;
+      }
+    }
+
+    .meta img{
+      background-size: cover;
+      width:95%;
+      height: 95%;
+      margin:5px;
+      max-width: 300px;
+      max-height: 300px;
+      border-radius: 5px;
+
+    }
+  
+    @media (max-width:320px) {
+        body{
+            height: 1200px;
+        }
+    }
+    
+    @media (min-width: 420px) {
+    
+      flex-direction: column;
+      max-width: 700px;
+      .meta {
+        flex-basis: 40%;
+        height: auto;
+    
+      }
+      .description {
+        flex-basis: 60%;
+       
+      }
+      .blog-card{
+        width:95%!important;
+        margin:0 auto;
+      }
+      &.alt {
+        flex-direction: row-reverse;
+        .description {
+          &:before {
+            left: inherit;
+            right: -10px;
+            transform: skew(3deg)
+          }
+        }
+        .details {
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+
+  #us-title{
+    text-align: center;
+    background-color: var(--first-dark);
+    color:var(--first-grey);
+    margin-top:30px;
+    padding:20px;
+  }
+
+
+  /*Código del jumbotron*/
+
+  #container-jumbotron{
+    text-align: center;
+  
+  }
+
+  .jumbotron { 
+    margin-top:50px;
+    padding: 30px; /* fills out the jumbotron */
+    background:linear-gradient(var(--first-grey-dark),var(--first-dark));
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    color:var(--first-grey);
+    
+  }
+  
+  .jumbotron__container {
+    width: 300px; /* specify a width */
+    margin: 0 auto;  /* centers the container */
+    
+  }
+
+  .us-container{
+    font-size: 1.5rem;
+    font-weight: 600;
+    background:linear-gradient(var(--first-cream),var(--first-grey));
+    width:90%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    color:var(--first-dark);
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+  
+  .jumbotron .jumbotron__container { 
+    max-width: 90%; /* allows the jumbotron to adjust on smaller widths */
+  
+  }
+  
+  #jumbotron-title{ 
+   
+    color: var(--first-grey);
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    border-radius: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+
+  .us_items{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
+  }
+
+  @media(max-width:320px){
+    .us-container{
+        font-size: 1.2rem;
+    }
+  }
+  @media(max-width:768){
+    .jumbotron__container {
+       width:500px;
+    }
+
+    .jumbotron__container p {
+       font-size: 25px;
+     }
+
+   
+  }

@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Registro
+{% endblock title %}
+
+{% block css %}
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/personales/newFormStyles.css')}}" type="text/css">
+{% endblock css %}
+
+
+{% block content %}
+
+	<div class="main">
+        <h1 class="titleRegister">Registrarse</h1>
+        <!--Etiqueta form principal-->
+		<form action="{{url_for('register')}}" class="form" id="form" 
+        enctype="multipart/form-data"
+        method="post">
+         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <!---Grupo para pedir un dato al usuario-->
+            <div class="form__group" id="name__group">
+                <label for="name" class="form__label">Nombre</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="name" id="name">
+                    
+                    <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
+                </div>
+                <small id="name-error"></small>
+            </div>
+
+            <!---Grupo para pedir un dato al usuario-->
+            <div class="form__group" id="lastName__group">
+                <label for="lastName" class="form__label">Apellido</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="lastName" id="lastName">
+                    <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
+                    <!--<small class="form__input-error lastName-error"></small>-->
+                </div>
+                <small id="lastName-error"></small>
+            </div>
+
+              <!---Grupo para pedir un dato al usuario-->
+              <div class="form__group" id="email__group">
+                <label for="email" class="form__label">Email</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="email" id="email">
+                    <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
+                    <!--<small class="form__input-error email-error"></small>-->
+                </div>
+                <small id="email-error"></small>
+                </div>
+                
+                 <!---Grupo para pedir un dato al usuario-->
+              <div class="form__group" id="telephone__group">
+                <label for="telephone" class="form__label">Teléfono</label>
+                <div class="form__group-input">
+                    <input type="text" class="form__input" name="telephone" id="telephone">
+                    <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
+                    <!--<small class="form__input-error telephone-error"></small>-->
+                </div>
+                <small id="phone-error"></small>
+              </div>
+                <div class="form__group" id="password__group">
+                    <label for="password" class="form__label">Contraseña</label>
+                    <div class="form__group-input">
+                        <input type="password" class="form__input" name="password" id="password">
+                        <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
+                        <!--<small class="form__input-error password-error"></small>-->
+                    </div>
+                    <small id="password-error"></small>
+            </div>
+
+            <div class="form__group" id="password2__group">
+                <label for="password2" class="form__label">Repetir Contraseña</label>
+                <div class="form__group-input">
+                    <input type="password" class="form__input" name="password2" id="password2">
+                    <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
+                    <!--<small class="form__input-error password2-error"></small>-->
+                </div>
+                <small id="password2-error"></small>
+            </div>
+
+            <div class="form__group" id="sex__group">
+                <span class="form__label">Sexo</span>
+                <div class="form__group-input sex">
+                    <div class="radio-box" >
+                        <input type="radio" name="genre" id="male" value="male">
+                        <label for="male">Hombre</label>
+                        <input type="radio" name="genre" id="female" value="female">
+                        <label for="female">Mujer</label>
+                    </div>
+                </div>
+                <small id="sex-error"></small>
+            </div>
+
+            <div class="form__group" id="state__group">
+                <label for="state" class="form__label">Provincia</label>
+                <div class="form__group-input">
+                    
+                <select name="state" id="state">
+                    <option selected="selected" value=0 disabled>Seleccione una provincia</option>
+                    <option value="1">Corrientes</option>
+                    <option value="2">Chaco</option>
+                    <option value="3">Formosa</option>
+                    <option value="4">Misiones</option>
+                </select>
+                </div>
+                <small id="state-error"></small>
+            </div>
+
+            <div class="form__group">
+                <label for="avatar" class="form__label">
+                    Avatar
+                </label>
+                <div class="form__group-input">
+                    <input type="file" name="avatar" id="avatar"
+                    accept="image/png,image/jpeg,image/jpg,image/gif">
+                    <small id="avatar-error"></small>
+                 </div>
+                 <small>Archivos jpg, jpeg, gif, png</small>
+            </div>
+           
+
+            <div class="form__group text-center" id="terms__group">
+                
+                <div>
+                    <label class="form__label">
+                        Aceptar Términos y Condiciones
+                      
+                    <input type="checkbox" class="form__checkbox" name="terms" id="terms"
+                             style="display:inline;">
+                    </label>
+                    
+                </div>
+                <small id="terms-error"></small>
+            </div>
+
+           <!-- <div class="form__msg" id="msgError" name="msgError">
+                <small>
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    Error
+                </small>
+                
+            </div>-->
+
+            <div class="form__group form__group-btn-submit">
+                <button type="submit" class="form__btn" >Enviar</button>
+            </div>
+
+        </form>
+        
+      </div>
+
+{% endblock content %}
+
+{% block scripts %}
+
+<script src="{{url_for('static', filename='js/personales/newFormValidation.js')}}"></script>
+<script src="{{url_for('static', filename='js/sweetalert/sweetalert.js')}}"></script>
+<script src="{{url_for('static', filename='js/personales/controlErrors.js')}}"></script>
+{% endblock scripts %}
+
+

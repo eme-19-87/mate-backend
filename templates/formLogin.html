@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}
+
+Inicio Sesión
+{% endblock title %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/personales/newFormStyles.css')}}" type="text/css">
+   <link rel="stylesheet" href="{{url_for('static', filename='css/personales/wheel.css')}}" type="text/css">
+{% endblock css %}
+
+
+
+
+
+{% block content  %}
+
+<div class="main">
+  
+   <h1 class="titleRegister">Iniciar Sesión</h1>
+        <!--Etiqueta form principal-->
+		<form action="formLogin.html" class="form" id="form">
+           
+ 
+              
+              <!---Grupo para pedir un dato al usuario-->
+              <div class="form__group_login" id="email__group">
+                {{form.emailField.label(class='form__label')}}
+               
+                <div class="form__group-input">
+                  {{form.emailField(class='form__input')}}
+                    
+                 {% if form.emailField.errors %}
+                      <div>
+                          <small class="text-danger">
+                            {{form.emailField.errors[0]}}
+
+                        </small>
+                      </div>
+                      
+                 {% endif %}
+                </div>
+              
+              
+                 {{form.passwordField.label(class='form__label')}}
+                
+                <div class="form__group-input">
+                   {{form.passwordField(class='form__input')}}
+                   {% if form.passwordField.errors %}
+                <div>
+                
+                    <small class="text-danger">
+                        {{form.passwordField.errors[0]}}
+
+                    </small>
+                  
+                </div>
+             {% endif %}
+                   
+                </div>
+                </div>
+                
+                <div class="form__group">
+                    
+                       <div class="form__group_img">
+                        <img src="{{url_for('static', filename='img/Logos/logo-12.svg')}}" 
+                            class='rueda' style="height: 300px; width:300px;" alt="Logo de la empresa"
+                            id="logoLogin">
+
+                       </div>
+                            
+                        
+                    
+                    
+                    </div>
+                
+            
+
+            <div class="form__group form__group-btn-submit">
+                <button type="submit" class="form__btn">Enviar</button>
+            </div>
+
+        </form>
+  
+</div>
+
+
+
+
+{% endblock  %}
+

@@ -1,0 +1,202 @@
+/*
+Paleta de colores seleccionada
+
+https://paletadecolores.com.ar/paleta/6da67a/77b885/86c28b/859987/4a4857/
+
+*/
+
+:root{
+  /*Primera paleta*/
+  --first-grey:#EEEDEB;
+  --first-cream:#E0CCBE;
+  --first-grey-dark:#747264;
+  --first-dark:#3C3633;
+
+  /*Segunda paleta de colores*/
+  /*--second-palid-blue:#8CB9BD;
+  --second-white:#FEFBF6;
+  --second-orange: #ECB159;
+  --second-brown:#B67352;*/
+
+  /*Tercera paleta de colores*/
+  /*--third-high-brown:#6B240C;
+  --third-low-brown:#994D1C;
+  --third-orange:#E48F45;
+  --third-skin:#F5CCA0;*/
+
+  /*Cuarta paleta de colores*/
+  /*--forth-palid-skin:#FAEBE0;
+  --forth-first-green: #C9E4C5;
+  --forth-second-green:#B5CDA3;
+  --forth-brown:#C1AC95;*/
+
+  /*atributos*/
+  --color-fondo-pie:var(--first-dark);
+  --color-fondo-navbar:var(--first-dark);
+  --color-letra-pie:var(--first-grey);
+  --color-letra-navbar:var(--first-grey);
+  --color-fondo-general:var(--first-grey);
+
+}
+body{
+  position: relative;
+  min-height: 100vh;
+  /*padding-bottom: 2.5rem; */  
+  /*background-color:var(--color-fondo-general)!important;*/
+  font-family: "Space Grotesk", 'Times New Roman', Times, serif;
+  /*background: var(--first-grey);*/
+  background-image: url('../../img/banners/banner_con_transparencia3.png');
+  margin:0
+    
+}
+
+main{
+  /*background-image: url('../../img/banners/Banner_con_transparencia.png');*/
+  background-color: transparent;
+  margin-top: 0;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+
+
+ul{
+  list-style:none!important;
+}
+
+.optionBar{
+    background-color: var(--color-fondo-navbar);
+    border: none;
+    
+}
+
+.hamburgerBtn{
+  background-color: var(--color-letra-navbar);
+  color:var(--first-dark);
+  width:100%;
+  
+}
+
+.hamburguerIcon{
+  width:50px;
+}
+
+
+.optionBar a{
+  color:var(--color-letra-navbar);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 25px;
+ 
+  
+}
+
+.optionBar ul{
+  background-color: var(--color-fondo-navbar);
+
+}
+
+.optionBar ul li,
+.optionBar a,
+.optionBar btn{
+  color:var(--color-letra-navbar);
+}
+
+/*
+--first-grey:#EEEDEB;
+  --first-cream:#E0CCBE;
+  --first-grey-dark:#747264;
+  --first-dark:#3C3633;
+*/
+#headerContainer{
+  /*background: linear-gradient(#747264, #E0CCBE);*/
+  
+  
+  color:var(--first-dark);
+}
+
+.opcionesRegistro a{
+   color: var(--first-dark);
+   font-weight: 600;
+   font-size: 1.5rem;
+   box-shadow: #3C3633;
+   
+}
+
+/*Inicio del código para mantener siempre el pie de página debajo
+Sacado de: 
+
+https://www.freecodecamp.org/espanol/news/como-mantener-tu-pie-de-pagina-donde-pertenece/
+
+*/
+
+
+
+
+  /*
+  El estilo para el pequeño botón que me permite volver al inicio de la página
+  */
+.btnReturn{
+  position: fixed; 
+  bottom: 10px; 
+  right: 10px;
+  padding: 5px; 
+  background-color:var(--first-dark);
+  color: var(--first-grey);
+  border: none; 
+  border-radius: 100%; 
+  cursor: pointer;
+  z-index:1000;
+  display: none;
+}
+
+
+/*
+Inicia código para controlar el iframe con el mapa de localización
+*/
+#googleMaps{
+  width:700px;
+  margin:0 auto;
+  margin-bottom:50px;
+  margin-top:50px;
+}
+
+#googleMaps div{
+  width:500px;
+  margin:0 auto;
+}
+#googleMaps iframe{
+  width: 500px;
+  margin:0 auto;
+}
+
+#googleMaps__title{
+ text-align: center;
+ 
+}
+
+/*
+Finaliza código para controlar el iframe con el mapa de localización
+*/
+
+hr{
+  /*color:var(--first-dark);*/
+
+  background-color: var(--first-cream)!important;
+  color:var(--first-dark)!important;
+  border:none;
+  height: 10px;
+}
+
+
+  
+@media screen and (min-width: 768px){
+  #headerImg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

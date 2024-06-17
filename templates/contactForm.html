@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/personales/contactForm.css')}}" type="text/css">
+
+{% endblock css %}
+{% block title %}
+  Contactos
+{% endblock title %}
+
+
+{% block content %}
+  <div class="main">
+        
+        <h1 class="text-center mt-2">¡Contacta Con Nosotros!</h1>
+       
+       
+        <section id="googleMaps">
+            
+                <h2 id="googleMaps__title">¿Dónde nos encontramos?</h2>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13307.446399768958!2d-55.89848614877764!3d-27.36808224391992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9457bfcbf238e437%3A0xb57c862a36f7d82d!2sGaler%C3%ADa%20del%20Mate!5e0!3m2!1ses-419!2sar!4v1715453335598!5m2!1ses-419!2sar" 
+                    height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+                </div>
+              
+
+        </section>
+        <hr>
+        <section>
+            <h2 class="titleRegister">Formulario De Contacto</h2>
+            <!--Etiqueta form principal-->
+            <form  class="form-contact" id="form"
+          >
+                <!---Grupo para pedir un dato al usuario-->
+                <div class="form__group_column" id="name__group">
+                    <label for="name" class="form__label">Nombre</label>
+                    <div class="form__group-input">
+                        <input type="text" class="form__input" name="name" id="name">
+                        
+                        <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
+                    </div>
+    
+                </div>
+    
+    
+                  <!---Grupo para pedir un dato al usuario-->
+                  <div class="form__group_column" id="email__group">
+                    <label for="email" class="form__label">Email</label>
+                    <div class="form__group-input">
+                        <input type="text" class="form__input" name="email" id="email">
+                        <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
+                        <!--<small class="form__input-error email-error"></small>-->
+                    </div>
+                    </div>
+                    
+    
+                    
+                     <!---Grupo para pedir un dato al usuario-->
+                  <div class="form__group_column">
+                    <label for="motive" class="form__label">Motivo</label>
+                    <div class="form__group-input">
+                        <div class="form_select">
+                            
+                        <select name="motive" id="motive">
+                            <option value="1">Queja</option>
+                            <option value="2">Consulta</option>
+                            <option value="3">Sugerencia</option>
+                            <option value="4">Otros</option>
+                        </select>
+                        </div>
+                    </div>
+                    </div>
+    
+                   
+                    
+                    
+            
+               
+    
+               
+    
+                    <div class="form__group_column">
+                        <label for="reclaim" class="form__label">Mensaje</label>
+                        <div>
+                            <textarea name="reclaim" id="reclaim" cols="50" rows="10" ></textarea>
+                        </div>
+                        
+                    </div>
+                        
+                     
+           
+                <div class="btn-submit">
+                    <button type="submit" class="btnSubmit">Enviar</button>
+                </div>
+    
+            </form>
+
+        </section>
+       
+   
+        
+  </div>
+{% endblock content %}
+	
+	
+
+
+
+
+{% block scripts %}{% endblock scripts %}
+

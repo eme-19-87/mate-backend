@@ -1,0 +1,103 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}
+  Sobre Nosotros
+{% endblock title %}
+
+{% block css %}
+   <link rel="stylesheet" href="{{url_for('static', filename='css/personales/presentationCard.css')}}" type="text/css">
+{% endblock css %}
+
+
+{% block content %}
+      <div id="main">
+
+        <section id="container-jumbotron">
+          <header id="header">
+	
+          </header>
+            <div class="jumbotron">
+                <div class="jumbotron__container">
+                  <h1 id="jumbotron-title">Sobre Nosotros</h1>
+                </div>
+              </div>
+              <div>
+                <div class="us-container">
+               
+                  <h2 >¿Quienes Somos?</h2>
+                  <div>
+
+              
+                    En un rincón tranquilo de la pintoresca ciudad de Misiones, Argentina, se encuentra el
+                     "Almacén de Mate". Esta tienda es mucho más que un simple establecimiento; es un símbolo 
+                     de la pasión argentina por el mate y su profundo arraigo en la cultura del país.
+                      <p>
+                         
+                      La historia del "Almacén de Mate" comienza con Sofía, una joven emprendedora con raíces en la 
+                      región de Misiones. Sofía creció entre los campos de yerba mate, donde aprendió desde temprana 
+                      edad sobre la importancia del mate en la vida cotidiana de los argentinos. Su abuela, una experta
+                      en preparar el mate perfecto, le transmitió su amor y conocimiento por esta tradición centenaria.
+  
+                      </p>
+                      <p>
+                        Después de años de viajar por el país y observar la diversidad de culturas y tradiciones relacionadas con el mate, Sofía decidió que era hora de compartir su pasión con el mundo. Con una visión clara en mente, se propuso crear un espacio donde los amantes del mate pudieran encontrar todo lo que necesitan para disfrutar de esta bebida emblemática.
+  
+                      </p>
+                      <p>
+                        Con determinación y entusiasmo, Sofía convirtió un antiguo almacén en el corazón de Misiones en "El Almacén de Mate". La tienda es un homenaje a la rica historia y la artesanía detrás del mate argentino, con una amplia selección de yerba mate de alta calidad, mates tallados a mano, bombillas de plata y una variedad de accesorios tradicionales.
+                      </p>
+                      <p>
+                        Con el tiempo, se ha convertido en un destino imperdible para los turistas y lugareños por igual, que buscan sumergirse en la rica tradición del mate argentino. La tienda es un testimonio del amor y la dedicación de Sofía hacia esta bebida, y su legado perdurará mucho tiempo después de que ella haya pasado la antorcha a las generaciones futuras.
+                      </p>
+                      <p>
+                        En resumen, "El Almacén de Mate El Yerbal" es mucho más que una tienda; es un tributo a la cultura y la tradición del mate argentino, un lugar donde las personas pueden conectarse, aprender y disfrutar juntas de esta bebida emblemática.
+                      </p>
+                    </div>
+                </div>
+                <div class="us-img">
+                 
+                </div>
+              </div>
+             
+
+        </section>
+        <section id="us-information">
+            <h2 id="us-title">¡Conoce A Nuestro Equipo!</h2>
+
+            {% for member in teamData %}
+  
+            <div class="blog-card alt text-wrap">
+              <div class="description">
+                  <h1>
+                      {{member.nombre + ' ' + member.apellido}}
+                  </h1>
+                  <h2>
+                     {{member.nacimiento}}
+                  </h2>
+                  <p>
+                    {{member.descripcion}}
+                  </p>
+              </div>
+              <div class="meta">
+                  <img  src="{{url_for('static', filename='img/'+member.img)}}">
+
+                
+              </div>
+            </div>
+            {% endfor %}
+
+        </section>
+        
+  </div>
+{% endblock content %}
+
+
+
+   
+  
+
+
+
+

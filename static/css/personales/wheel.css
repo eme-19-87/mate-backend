@@ -1,0 +1,27 @@
+/*
+Animación Rueda
+*/
+.rueda{
+    animation-name: rueda;
+    animation-duration: 5s;
+    animation-iteration-count:initial;
+    animation-timing-function: linear;
+    -webkit-animation-name: rueda; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 5s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+    display: block;
+    margin: 0 auto;
+    height:200px;
+    width: 200px;
+    color: var(--first-grey);
+  }
+  /* Chrome, Safari, Opera */
+ 
+  @keyframes rueda{
+    100% {
+      -ms-transform: rotate(360deg); /* IE 9 */
+      -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */ 
+      transform: rotate(-360deg);
+    }
+  }
