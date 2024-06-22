@@ -1,0 +1,125 @@
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+{% if id %}
+<input type="hidden" name="id" value="{{ id }}" />
+{% endif %}
+<div class="container">
+  <div class="row">
+    <div class="col-6 mb-2">
+      <div>
+          {{form.name.label}}
+      </div>
+      
+      {{form.name}}
+      <small id="name-error" class="text-danger">
+            {% if form.name.errors %} {{form.name.errors[0]}} {% endif %}
+          </small>
+    </div>
+    <div class="col-6 mb-2">
+      <div>
+        {{form.price.label}}
+      </div>
+      
+      {{form.price}}
+      <small id="lastName-error">
+            {% if form.price.errors %} {{form.price.errors[0]}} {% endif %}
+          </small>
+    </div>
+    <div class="col-6 mb-2">
+      {{form.stock.label(class='w-50')}}
+      {{form.stock(class='w-50')}}
+      <small id="lastName-error">
+            {% if form.stock.errors %} {{form.stock.errors[0]}} {% endif %}
+          </small>
+    </div>
+    <div class="col-6 mb-2">
+      {{form.category.label(class='w-50')}}
+      {{form.category(class='w-50')}}
+      <small id="lastName-error">
+            {% if form.category.errors %} {{form.category.errors[0]}} {% endif %}
+          </small>
+    </div>
+    <div class="col-12 mb-2">
+      {{form.img.label(class='w-50')}}
+      {{form.img(class='w-50')}}
+      {% if img %}
+      <button
+        type="button"
+        class="form__btn"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Ver Imagen Actual
+      </button>
+      {% endif %}
+      <small id="avatar-error">
+        {% if form.img.errors %} {{form.img.errors[0]}} {% endif %}
+      </small>
+      <small id="lastName-error">
+            {% if form.img.errors %} {{form.img.errors[0]}} {% endif %}
+          </small>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+      <div class="col-12 col-md-6">
+      <div>
+        {{form.description.label}}
+      </div>
+      
+      {{form.description}}
+      <small id="lastName-error">
+            {% if form.description.errors %} {{form.description.errors[0]}} {% endif %}
+          </small>
+    </div>
+  </div>
+
+</div>
+
+<!-- <div class="form__msg" id="msgError" name="msgError">
+                <small>
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    Error
+                </small>
+                
+            </div>-->
+
+<div class="form__group form__group-btn-submit">
+  {{form.submit(class='form__btn')}}
+</div>
+
+{% if img %}
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen Inicial</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <img
+          width="320px"
+          src="{{ url_for('static', filename='img/products/' ~ img) }}"
+          alt="Current Image"
+        />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

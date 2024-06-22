@@ -1,0 +1,41 @@
+{% extends "baseAdmin.html" %}
+
+{% block title %}
+  Actualizar Producto
+{% endblock title %}
+
+
+{% block css %}
+     <link rel="stylesheet" href="{{url_for('static', filename='css/personales/newFormStyles.css')}}" type="text/css">
+ {% endblock %} 
+{% block content  %}
+  	<div class="main">
+        <h1 class="titleRegister">Actualizar Producto</h1>
+           {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages%}
+                  {% if category=='error' %}
+                      {% for key in message  %}
+                          <li class="text-danger">
+                            {{message[key][0]}}
+                          </li>
+                      {% endfor %}
+                  {% endif %}
+                    
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+        <!--Etiqueta form principal-->
+		<form action="{{url_for('product.update')}}"  id="form" 
+        enctype="multipart/form-data"
+        method="post" novalidate>
+      {% include "products/form.html" %}
+    </form>
+        
+  </div>
+
+{% endblock %}
+
+<!-- Modal -->

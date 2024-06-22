@@ -1,0 +1,16 @@
+{% extends "baseAdmin.html" %}
+
+
+{% block content %}
+
+  <div>
+    <a href="{{url_for('auth.logout')}}">
+      Logout
+    </a>
+  </div>
+</div>
+
+<div>
+  <h1>Hola {{current_user.name}} {{current_user.lastname}} </h1>
+</div>
+{% endblock content %}
