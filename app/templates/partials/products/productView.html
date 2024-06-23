@@ -1,31 +1,18 @@
-{% extends "baseAdmin.html" %}
 
-{% block title %}
-  Productos
-{% endblock title %}
 
-{% block css %}
-   <link rel="stylesheet" href="{{ url_for('static', filename = 'css/personales/productCardStyle.css') }}" type="text/css">
-{% endblock css %}
-
-{% block content %}
-  
-    <div class="main">
-         <section style="margin-top:25px;">
-			<h1 id="title-mas-vendidos" style="text-align: center;">Lista Productos</h1>
 			
 				<ul class="cards" id="cardContainer">
           {% for product in products  %}
              <li class="cards__item">
             <div class="card">
-                <img src="{{ url_for('static', filename = 'img/'+product.rutaImg) }}" alt="{{product.nombre}}" class="card__image card__image--fence">
+                <img src="{{ url_for('static', filename='img/products/' ~ product.img) }}" alt="{{product.nombre}}" class="card__image card__image--fence">
                 <div class="card__content">
 
                   <div class="card_title">
-                      {{product.nombre}}
+                      {{product.name}}
                   </div>
                   <p class="card__text">
-                     {{product.precio}}
+                     ${{product.price}}
                   </p>
                   <div class="details-container">
                     <button class="btn btn-block card__btn">
@@ -42,11 +29,6 @@
 				  
 					
 				  </ul>
-			
-		</section>
-    </div>
-
-{% endblock content %}
 
 
 

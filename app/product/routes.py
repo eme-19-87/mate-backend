@@ -105,3 +105,9 @@ def delete():
     product=Product.get_by_id(id)
     product.delete()
     return redirect(url_for('product.index'))
+
+@product_bp.route('/show/<int:id_cat>',methods=['GET'])
+def show_product(id_cat=1):
+    products=Product.get_all_by_category(id_cat)
+    categories=Category.get_all()
+    return render_template('products/showProduct.html',products=products,categories=categories)

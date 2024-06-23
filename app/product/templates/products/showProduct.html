@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Productos
+{% endblock title %}
+
+{% block css %}
+      <link rel="stylesheet" href="{{url_for('static', filename='css/personales/productCardStyle.css')}}" type="text/css">
+
+{% endblock css %}
+
+{% block content %}
+
+    <div class="main">
+      {% if not products %}
+          <div class="alert alert-success m-5 fs-5 text-center">
+            Aún no hay productos para esta categoria. Revise las otras opciones. Por favor.
+
+          </div>
+      {% else %}
+       {% include "partials/products/productView.html" %}
+      
+      {% endif %}
+     
+    </div>
+
+    
+
+ 
+{% endblock content %}

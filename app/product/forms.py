@@ -64,7 +64,7 @@ def get_categories():
 
 class ProductForm(FlaskForm):
     #creo un objeto con los campos del formulario
-    name=StringField("Nombre",[validators.DataRequired('El nombre es requerido'),unique_name()])
+    name=TextAreaField("Nombre",[validators.DataRequired('El nombre es requerido'),unique_name()],render_kw={"rows": 2, "cols": 30})
     price=FloatField("Precio",[validators.DataRequired('El precio es requerido'),control_price()])
     stock=IntegerField("Stock",[validators.DataRequired("El stock es requerido"),control_stock()])
     description=TextAreaField("Descripcion",[validators.DataRequired("Se requier de una descripción")],render_kw={"rows": 5, "cols": 50})

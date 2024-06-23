@@ -91,6 +91,7 @@
                                             <ul class="dropdown-menu optionBar">
                                                 {% for category in  categories %}
                                                 <li><a class="dropdown-item" id="{{ category . name }}"
+                                                    href="{{url_for('product.show_product',id_cat=category.id)}}"
                                                       >
                                                         {{ category . name }}
                                                     </a></li>
